@@ -1,35 +1,75 @@
-
-/* Sidebar.css */
+/* Sidebar container */
 .sidebar {
-    width: 200px;
-    height: 100%;
-    background-color: #83dac8;
-    color: #990000;
-    position: fixed;
-    top: 50px;
-    left: 0;
-    font-weight: bold;
-    overflow-x: hidden;
-    padding-top: 20px;
-    ;
-  }
-  .sidebar a{
-    text-decoration:  none;
-  }
-  .sidebar ul {
-    text-align: left;
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    color: rgb(0, 0, 0);
-    padding: 10px 15px;
-    cursor: pointer;
-  }
-  
-  .sidebar li:hover {
-    background-color: #f7fbfd;
-    
-  }
-  
+  width: 250px;
+  height: 100vh;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar title */
+.sidebar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Section titles */
+.sidebar-section-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 5px;
+}
+
+/* List styles */
+.sidebar-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-item {
+  margin-bottom: 10px;
+}
+
+/* Sidebar links */
+.sidebar-link {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar-link:hover {
+  background-color: #34495e;
+  color: #1abc9c;
+}
+
+/* Prevent layout shift */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Content area beside sidebar */
+.main-content {
+  margin-left: 250px; /* Matches sidebar width */
+  padding: 20px;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}

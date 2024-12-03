@@ -14,15 +14,7 @@ const Productedit = (props) => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(inputs)
-    axios.get("http://localhost:3005/pview")
-      .then(response => {
-        console.log(response.data)
-        setCategory(response.data)
-      })
-      .catch(err => console.log(err))
-  }, [])
+
 
   const inputhandler = (event) => {
     const { name, value } = event.target
@@ -38,10 +30,10 @@ const Productedit = (props) => {
         setCategory(response.data)
       })
       .catch(err => console.log(err))
-      axios.get(baseurl + "/category/cview")
+    axios.get(baseurl + "/category/cview")
       .then(response => {
-          console.log(response.data)
-          setCategory(response.data)
+        console.log(response.data)
+        setCategory(response.data)
       })
       .catch(err => console.log(err))
   }, [])
@@ -52,9 +44,10 @@ const Productedit = (props) => {
     inputs.Pphoto = file;
   }
 
-  const savedata = () => {
+
+
+  const updatedata = () => {
     const formdata = new FormData();
-  // formdata.append('_id', inputs._id);
     formdata.append('Pname', inputs.Pname);
     formdata.append('Pdescr', inputs.Pdescr);
     formdata.append('Price', inputs.Price);
@@ -62,9 +55,12 @@ const Productedit = (props) => {
     formdata.append('Status', inputs.Status);
     formdata.append('Pphoto', inputs.Pphoto);
 
-
-    fetch(baseurl + '/Product/pnew',
-      { method: 'post', body: formdata, })
+    fetch('http://localhost:5005/product/pedit/' + inputs._id,
+      //fetch('baseurl + "/product/pedit/" + id',
+      {
+        method: 'put',
+        body: formdata,
+      })
       .then((response) => response.json())
       .then((data) => {
         alert("record saved")
@@ -72,18 +68,14 @@ const Productedit = (props) => {
       .catch((err) => {
         console.log("error")
       })
-    navigate('/pview')
   }
-
-
 
   return (
     <div className='pedit'>
       <Topebar />
       <Sidebar />
-      <h1 align="center">To add a new Product</h1>
+      <h1 align="center">SELL A PRODUCT</h1>
       <form>
-        <TextField id="outlined-basic" label="Id" variant="outlined" value={inputs._id} name='_id' onChange={inputhandler} /><br /><br />
         <TextField id="outlined-basic" label="Product name" variant="outlined" value={inputs.Pname} name='Pname' onChange={inputhandler} /><br /><br />
         <TextField id="outlined-basic" label="Description" variant="outlined" value={inputs.Pdescr} name='Pdescr' onChange={inputhandler} /><br /><br />
         <TextField id="outlined-basic" label="Price" variant="outlined" value={inputs.Price} name='Price' onChange={inputhandler} /><br /><br />
@@ -106,10 +98,9 @@ const Productedit = (props) => {
           <option value="INACTIVE">INACTIVE</option>
         </select><br /><br />
 
-
         To add photo <input type='file' onChange={handleimage} />
 
-        <Button onClick={savedata}>SUBMIT</Button>
+        <Button onClick={updatedata}>UPDATE</Button>
       </form>
     </div>
   )

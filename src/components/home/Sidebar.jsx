@@ -1,27 +1,36 @@
-import React from 'react'
-import './sidebar.css'
+import React from 'react';
+import './sidebar.css';
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
-    <ul>
-    <a href='/home'><li>HOME</li></a>
-   </ul>
-    Registrations
-   <ul>
-    <a href='/category'><li>Category</li></a>
-    <a href='/product'><li>Product</li></a>
-    {/* <a href='/pet'><li></li></a> */}
-   </ul>
-   View
-   <ul>
-   <a href="/cview"><li>Category View</li></a>
-   <a href="/pview"><li>Product View</li></a>
-  
-  </ul>
-  
-</div>
-  )
-}
+      <nav>
+        <ul className="sidebar-list">
+          <li className="sidebar-item">
+            <a href="/home" className="sidebar-link">Home</a>
+          </li>
+        </ul>
+        <h3 className="sidebar-section-title">Registrations</h3>
+        <ul className="sidebar-list">
+          <li className="sidebar-item">
+            <a href="/category" className="sidebar-link">Category</a>
+          </li>
+          <li className="sidebar-item">
+            <a href="/product" className="sidebar-link">Product</a>
+          </li>
+        </ul>
+        <h3 className="sidebar-section-title">View</h3>
+        <ul className="sidebar-list">
+          <li className="sidebar-item">
+            <a href="/cview" className="sidebar-link">Category View</a>
+          </li>
+          <li className="sidebar-item">
+            <a href="/pview" className="sidebar-link">Product View</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+};
 
-export default Sidebar
+export default Sidebar;

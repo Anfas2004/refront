@@ -59,9 +59,10 @@ const Product = () => {
 
 
   return (
-    <div className='container'>
+    <div>
       <Topebar />
       <Sidebar />
+      <div className='container'>
       <h1 align="center">ADD A PRODUCT</h1>
       <form>
         
@@ -100,6 +101,7 @@ const Product = () => {
         
         <Button onClick={savedata}>SUBMIT</Button>
       </form>
+      </div>
     </div>
   )
 }
