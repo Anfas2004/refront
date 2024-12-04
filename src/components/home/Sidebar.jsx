@@ -1,35 +1,88 @@
-import React from 'react';
-import './sidebar.css';
+import React, { useState } from "react";
+import {
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  IconButton,
+  Toolbar,
+  Typography,
+  Divider,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom"; // Optional if using React Router
 
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="sidebar">
-      <nav>
-        <ul className="sidebar-list">
-          <li className="sidebar-item">
-            <a href="/home" className="sidebar-link">Home</a>
-          </li>
-        </ul>
-        <h3 className="sidebar-section-title">Registrations</h3>
-        <ul className="sidebar-list">
-          <li className="sidebar-item">
-            <a href="/category" className="sidebar-link">Category</a>
-          </li>
-          <li className="sidebar-item">
-            <a href="/product" className="sidebar-link">Product</a>
-          </li>
-        </ul>
-        <h3 className="sidebar-section-title">View</h3>
-        <ul className="sidebar-list">
-          <li className="sidebar-item">
-            <a href="/cview" className="sidebar-link">Category View</a>
-          </li>
-          <li className="sidebar-item">
-            <a href="/pview" className="sidebar-link">Product View</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <>
+      {/* Top-left Icon Button */}
+      <Toolbar sx={{ justifyContent: "flex-start" }}>
+        <IconButton edge="start" color="inherit" onClick={toggleDrawer}>
+          <MenuIcon />
+        </IconButton>
+      </Toolbar>
+
+
+      {/* Collapsible Drawer */}
+      <Drawer
+        anchor="left"
+        open={isOpen}
+        onClose={toggleDrawer}
+        sx={{
+          "& .MuiDrawer-paper": {
+            width: 240,
+          },
+        }}
+      >
+        <List>
+          <ListItem>
+            <Typography variant="h6" sx={{ pl: 2 }}>
+              Main
+            </Typography>
+          </ListItem>
+          <ListItem button component={Link} to="/home" onClick={toggleDrawer}>
+            <ListItemText primary="Home" />
+          </ListItem>
+        </List>
+        <Divider />
+        <List>
+          <ListItem>
+            <Typography variant="h6" sx={{ pl: 2 }}>
+              Registrations
+            </Typography>
+          </ListItem>
+          <ListItem button component={Link} to="/category" onClick={toggleDrawer}>
+            <ListItemText primary="Category" />
+          </ListItem>
+          <ListItem button component={Link} to="/product" onClick={toggleDrawer}>
+            <ListItemText primary="Product" />
+          </ListItem>
+        </List>
+        <Divider />
+        <List>
+          <ListItem>
+            <Typography variant="h6" sx={{ pl: 2 }}>
+              View
+            </Typography>
+          </ListItem>
+          <ListItem button component={Link} to="/cview" onClick={toggleDrawer}>
+            <ListItemText primary="Category View" />
+          </ListItem>
+          <ListItem button component={Link} to="/pview" onClick={toggleDrawer}>
+            <ListItemText primary="Product View" />
+          </ListItem>
+          <ListItem button component={Link} to="/uview" onClick={toggleDrawer}>
+            <ListItemText primary="User View" />
+          </ListItem>
+        </List>
+      </Drawer>
+    </>
   );
 };
 

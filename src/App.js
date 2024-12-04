@@ -10,6 +10,8 @@ import Productview from './components/product/Productview';
 import Ulogin from './components/ulogin/Ulogin';
 import Usignup from './components/usignup/Usignup';
 import Uhome from './components/uhome/Uhome';
+import Userview from './components/category/Userview';
+import Upview from './components/uhome/Upview';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path={'/cview'} element={<Categoryview/>} ></Route>
         <Route path={'/usignup'} element={<Usignup/>} ></Route>
         <Route path={'/pview'} element={<Productview/>} ></Route>
+        <Route path={'/uview'} element={<Userview/>} ></Route>
+        <Route path={'/uproduct'} element={<Upview/>} ></Route>
         
       </Routes>
       </BrowserRouter>

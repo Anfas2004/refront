@@ -29,7 +29,7 @@ const Uhome = () => {
           <Typography variant="h5" color="text.secondary" sx={{ marginTop: 2 }}>
            A Complete Website for Buying and Selling your Goods and Things
           </Typography>
-          <Button href="/pview" variant="contained" color="secondary" sx={{ marginTop: 3 }}>
+          <Button href="/uproduct" variant="contained" color="secondary" sx={{ marginTop: 3, mr: 2 }}>
             buy
           </Button>
           <Button href="/product" variant="contained" color="secondary" sx={{ marginTop: 3}}>

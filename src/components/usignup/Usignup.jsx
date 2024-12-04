@@ -5,7 +5,7 @@ import axios from 'axios';
 import './usignup.css';
 
 const Usignup = () => {
-    var [inputs,setInputs]=useState({"username":'',"email":'',"dob":'',"aadhar":'',"password":'',"confirmPassword":'',})
+    var [inputs,setInputs]=useState({"username":'',"email":'',"dob":'',"aadhar":'',"password":'',"confirmPassword":'',"status":'ACTIVE'})
 
 const navigate = useNavigate();
 
