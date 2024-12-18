@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import baseurl from '../../Api';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
-
-import { Typography, Grid, Box, Button, AppBar, Toolbar } from '@mui/material';
+import { Typography, Grid, Box, AppBar, Toolbar } from '@mui/material';
 
 import { Buffer } from 'buffer';
 
+
 const Upview = () => {
   const [product, setProduct] = useState([]);
+
 
   useEffect(() => {
     axios
@@ -82,9 +85,12 @@ const Upview = () => {
                     Category: {value.Cname}
                   </Typography>
                   <Box sx={{ marginTop: 2 }}>
-                    <Button color="error" variant="contained" size="small">
-                      Buy
-                    </Button>
+                    <Link to={`/updetails/${value.id}`} style={{ textDecoration: 'none' }}>
+                      <Button color="error" variant="contained" size="small">
+                        Buy
+                      </Button>
+                    </Link>
+
                   </Box>
                 </Box>
               </Grid>

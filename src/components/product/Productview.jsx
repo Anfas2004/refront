@@ -45,9 +45,9 @@ const Productview = () => {
       <Sidebar /> */}
       <TopebarWithSidebar/>
       <div className="bb">
-        <Typography variant="h4" align="center" gutterBottom>
+        {/* <Typography variant="h4" align="center" gutterBottom>
           PRODUCT VIEW
-        </Typography>
+        </Typography> */}
         <Grid container spacing={3}>
           {product.map((value, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
