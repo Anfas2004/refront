@@ -17,7 +17,7 @@ const Ulogin = () => {
    
     const response = await axios.post(baseurl+"/ulogin/uloginview", {
       username: username,
-      password: password,
+      password: password
     });
 
     
@@ -26,9 +26,11 @@ const Ulogin = () => {
       navigate('/uhome')
     }
     else {
-      setError('invalid username or password.please try again')
+      setError('Maybe your password or username is wrong or either it is banned ')
     }
   }
+
+  
   return (
     <div>
       <div className="login-container">

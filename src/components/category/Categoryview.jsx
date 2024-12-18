@@ -1,13 +1,14 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import './categoryview.css'
-import Topebar from '../home/Topebar'
-import Sidebar from '../home/Sidebar'
+// import Topebar from '../home/Topebar'
+// import Sidebar from '../home/Sidebar'
 import axios from 'axios'
 import baseurl from '../../Api';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import Categoryedit from './Categoryedit'
+import TopebarWithSidebar from '../home/TopebarWithSidebar';
 
 const Categoryview = () => {
     var [category, setCategory] = useState([]);
@@ -42,8 +43,9 @@ const Categoryview = () => {
         
 var result = 
 <div>
-            <Topebar />
-            <Sidebar />
+            {/* <Topebar />
+            <Sidebar /> */}
+            <TopebarWithSidebar/>
             <div className='bb'>
 
                 <Typography >CATEGORY VIEW</Typography><br /><br />

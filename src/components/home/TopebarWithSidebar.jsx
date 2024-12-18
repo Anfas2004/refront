@@ -8,11 +8,13 @@ import {
   Toolbar,
   Typography,
   Divider,
+  Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom"; // Optional if using React Router
+import './topebar.css';
 
-const Sidebar = () => {
+const TopebarWithSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDrawer = () => {
@@ -20,22 +22,42 @@ const Sidebar = () => {
   };
 
   return (
-    <>
-      {/* Top-left Icon Button */}
-      <Toolbar
-        sx={{
-          justifyContent: "flex-start", // Align items to the left
-          padding: 0, // Remove any extra padding that might cause alignment issues
-        }}
-      >
-        <IconButton edge="start" color="inherit" onClick={toggleDrawer}>
-          <MenuIcon />
-        </IconButton>
-      </Toolbar>
+    <div className="topbar">
+      {/* Topbar Section */}
+      <div className="topbarwrapper">
+        <div className="topleft">
+          <Toolbar
+            sx={{
+              justifyContent: "flex-start", // Align items to the left
+              padding: 0, // Remove any extra padding that might cause alignment issues
+            }}
+          >
+            <IconButton edge="start" color="inherit" onClick={toggleDrawer}>
+              <MenuIcon />
+            </IconButton>
+            <span className="logo">RETRADE</span>
+          </Toolbar>
+        </div>
 
+        <div className="topright">
+          <Button
+            variant="contained"
+            color="error"
+            href="/admin"
+            sx={{
+              textTransform: "none",
+              padding: "5px 20px",
+              fontSize: "16px",
+              borderRadius: "8px",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+            }}
+          >
+            Log Out
+          </Button>
+        </div>
+      </div>
 
-
-      {/* Collapsible Drawer */}
+      {/* Sidebar Section */}
       <Drawer
         anchor="left"
         open={isOpen}
@@ -88,8 +110,8 @@ const Sidebar = () => {
           </ListItem>
         </List>
       </Drawer>
-    </>
+    </div>
   );
 };
 
-export default Sidebar;
+export default TopebarWithSidebar;

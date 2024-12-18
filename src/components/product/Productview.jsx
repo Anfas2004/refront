@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import baseurl from '../../Api';
 import axios from 'axios';
-import Topebar from '../home/Topebar';
-import Sidebar from '../home/Sidebar';
+// import Topebar from '../home/Topebar';
+// import Sidebar from '../home/Sidebar';
 import { Typography, Grid, Box, Button } from '@mui/material';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import { Buffer } from 'buffer';
 import Productedit from './Productedit';
+import TopebarWithSidebar from '../home/TopebarWithSidebar';
 
 const Productview = () => {
   const [product, setProduct] = useState([]);
@@ -40,8 +41,9 @@ const Productview = () => {
 
   let result = (
     <div>
-      <Topebar />
-      <Sidebar />
+      {/* <Topebar />
+      <Sidebar /> */}
+      <TopebarWithSidebar/>
       <div className="bb">
         <Typography variant="h4" align="center" gutterBottom>
           PRODUCT VIEW

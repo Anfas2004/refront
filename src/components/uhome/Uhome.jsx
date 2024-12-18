@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Button, Container, Grid, Box, Paper, Stack } from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, Container, Grid, Box, Paper} from "@mui/material";
 
 
 const Uhome = () => {
@@ -13,31 +13,44 @@ const Uhome = () => {
           </Typography>
 
           <div className='topright'>
-          <Button color="inherit">logout</Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              href="/"
+              sx={{
+                textTransform: 'none',
+                padding: '5px 20px',
+                fontSize: '16px',
+                borderRadius: '8px',
+                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+              }}
+            >
+              Log Out
+            </Button>
           </div>
-          
+
         </Toolbar>
       </AppBar>
 
       {/* Hero Section */}
-      
+
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh', backgroundColor: '#f4f4f4' }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
           <Typography variant="h3" sx={{ fontWeight: 'bold' }}>
             RETRADE
           </Typography>
           <Typography variant="h5" color="text.secondary" sx={{ marginTop: 2 }}>
-           A Complete Website for Buying and Selling your Goods and Things
+            A Complete Website for Buying and Selling your Goods and Things
           </Typography>
           <Button href="/uproduct" variant="contained" color="secondary" sx={{ marginTop: 3, mr: 2 }}>
             buy
           </Button>
-          <Button href="/product" variant="contained" color="secondary" sx={{ marginTop: 3}}>
+          <Button href="/product" variant="contained" color="secondary" sx={{ marginTop: 3 }}>
             sell
           </Button>
         </Container>
       </Box>
-      
+
 
       {/* Features Section */}
       <Container sx={{ my: 5 }}>
@@ -81,7 +94,7 @@ const Uhome = () => {
       {/* Footer Section */}
       <Box sx={{ py: 3, backgroundColor: 'background.default', textAlign: 'center' }}>
         <Typography variant="body2" color="text.secondary">
-          © 2024 My Website. All rights reserved.
+          © 2024 Retrade. All rights reserved.
         </Typography>
       </Box>
     </div>
